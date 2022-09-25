@@ -35,25 +35,17 @@ const renderStudent = function(student) {
   const { id, name: stName, lastName, mark, markedDate } = student;
 
   const studentRow = studentTemplate.content.cloneNode(true);
-
-  // const studentId = studentRow.querySelector(".student-id");
-  // studentId.textContent = id;
+ 
 
   studentRow.querySelector(".student-id").textContent = id;
-  
-  // const studentName = studentRow.querySelector(".student-name");
-  // studentName.textContent = `${stName} ${lastName}`
+   
 
   studentRow.querySelector(".student-name").textContent = `${stName} ${lastName}`;
-
-  // const studentMarkedDate = studentRow.querySelector(".student-marked-date")
-  // studentMarkedDate.textContent = showDate(markedDate);
-
+ 
   studentRow.querySelector(".student-marked-date").textContent = showDate(markedDate);
 
   const markPercent = Math.round(mark * TOTAL_MARK_PERCENT / TOTAL_MARK);
-  // const studentMark = studentRow.querySelector(".student-mark");
-  // studentMark.textContent = markPercent + "%"
+   
   studentRow.querySelector(".student-mark").textContent = markPercent + "%";
 
 
@@ -252,11 +244,7 @@ filterForm.addEventListener("submit", function(evt) {
         default:
           break;
       }
-      // if (sortValue === "2") {
-      //   return b.mark - a.mark;
-      // } else if (sortValue === "3") {
-      //   return a.mark - b.mark;
-      // }
+       
     })
     .filter(function(student) {
       const studentMarkPercent = Math.round(student.mark * TOTAL_MARK_PERCENT / TOTAL_MARK)
